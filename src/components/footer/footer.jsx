@@ -13,35 +13,31 @@ const Footer = () => {
     {
       icon: insta,
       alt: 'Instagram',
-      href: 'https://www.instagram.com/agrimart20/'
+      href: 'https://www.instagram.com'
     },
     {
       icon: twitter,
       alt: 'Twitter',
-      href: 'https://x.com/Agrimart3'
+      href: 'https://x.com'
     },
     {
       icon: email,
       alt: 'Gmail',
-      href: 'mailto:agrimart@gmail.com'
+      href: 'pachu.242004@gmail.com'
     }
   ];
 
   const contactInfo = [
-    {
-      icon: location,
-      alt: 'Agromart Pune',
-      href: 'https://maps.app.goo.gl/PjnAu7sv8ukzt1xb8'
-    },
+    
     {
       icon: calling,
-      alt: '+91 8468954007',
-      href: 'tel:+918468954007'
+      alt: '+91 8104065238',
+      href: 'tel:+918104065238'
     },
     {
       icon: email,
       alt: 'Gmail',
-      href: 'mailto:agrimart@gmail.com'
+      href: 'pachu.242004@gmail.com'
     }
   ];
 
@@ -68,7 +64,7 @@ const Footer = () => {
             <img className="footer-logo" src={logo} alt="Agromart Logo" />
           </span>
           <p className="footer-para">
-          Discover pure, organic goodness at Agrimart—where fresh, wholesome products come straight from nature to you.
+          Get the right medicine, right when you need it—MediFind brings fast, reliable, and hassle-free medicine delivery straight to your door.
           </p>
         </div>
 
@@ -131,7 +127,7 @@ const Footer = () => {
      
       <div className="footer-bottom">
         <p className="footer-copyright">
-          &copy; 2024 All rights reserved Agrimart
+          &copy; 2025 All rights reserved MediFind
         </p>
         <div className="footer-social-links">
           {socialMediaLinks.map((link) => (
