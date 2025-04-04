@@ -44,15 +44,7 @@ function Card() {
           <div className="card-page-leftside-div1">
             <img src={mainImage} alt={cardObject.title} className="card-page-leftside-div1-img" />
             <div className="card-slider-div2">
-              {cardObject.imageSlider.map((sliderImage, index) => (
-                <img
-                  key={index}
-                  src={sliderImage}
-                  alt={`Slider ${index}`}
-                  onMouseOver={() => handleMouseOver(sliderImage)}
-                  onClick={() => handleMouseOver(sliderImage)}
-                />
-              ))}
+              
             </div>
           </div>
 
@@ -66,33 +58,30 @@ function Card() {
 
             <div className="card-page-leftside-div2-content">
               <div className="card-page-leftside-div2-smallcard">
-                <b>Shelf Life</b>
-                <span>{cardObject.shelfLife}</span>
+                <b>Material</b>
+                <span>{cardObject.material}</span>
               </div>
               <div className="card-page-leftside-div2-smallcard">
-                <b>Health Benefits</b>
-                <span>{cardObject.healthBenefits}</span>
+                <b>Size</b>
+                <span>{cardObject.size}</span>
               </div>
-              <div className="card-page-leftside-div2-smallcard">
-                <b>Storage Advice</b>
-                <span>{cardObject.storageType} at {cardObject.storageTemperature}</span>
-              </div>
+              
            
               <div className="card-page-leftside-div2-smallcard">
-                <b>Marketed By</b>
-                <span>{cardObject.marketedBy}</span>
+                <b>Warranty</b>
+                <span>{cardObject.warranty}</span>
               </div>
               <div className="card-page-leftside-div2-smallcard">
-                <b>Manufacturer Details</b>
-                <span>{cardObject.manufacturer}</span>
+                <b>Certifications</b>
+                <span>{cardObject.certifications}</span>
               </div>
               <div className="card-page-leftside-div2-smallcard">
-                <b>FSSAI License</b>
-                <span>{cardObject.sellerFSSAI}</span>
+                <b>elasticity</b>
+                <span>{cardObject.elasticity}</span>
               </div>
               <div className="card-page-leftside-div2-smallcard">
-                <b>Disclaimer</b>
-                <span>Every effort is made to maintain the accuracy of all information. However, actual product packaging and materials may contain more and/or different information. It is recommended not to solely rely on the information presented.</span>
+                <b>Waterproof</b>
+                <span>{cardObject.waterproof}</span>
               </div>
               <div className="card-page-leftside-div2-smallcard">
                 <b>Return Policy</b>
