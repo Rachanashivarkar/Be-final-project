@@ -24,11 +24,11 @@
 }
 
 .nav-logo img {
-    height: 60px;
-    width: 250px;
-    margin-right: 30px;
-    margin-left: 20px;
-    object-fit: cover;
+    height:fit-content;
+    width: 150px;
+    margin-right: 0;
+    margin-left:30px;
+    object-fit:contain;
 }
 
 .nav-menu {
