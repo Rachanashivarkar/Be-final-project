@@ -1,0 +1,299 @@
+.about-container {
+  padding: 20px;
+  background-color: #fff; 
+  color: #333;
+}
+
+.about-hero {
+  text-align: center;
+  background: #375241;
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out;
+  height: 80vh;
+}
+
+.about-title {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  color: #bcbcb5;
+  margin: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  animation: zoomIn 2s ease-in-out; 
+}
+
+.about-process-img{
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  border-radius: 30px ;
+}
+.about-card-container{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  flex-wrap: wrap;
+  
+}
+
+.about-content{
+  margin: 5px;
+  max-width: 360px;
+  padding: 0;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer; 
+  background-color: #fff;
+}
+
+.about-content-image{
+  width:100%;
+  height:200px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  color: #2e7031;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.about-description {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  animation: slideUp 1s ease-in-out;
+  padding: 5px 15px;
+  text-align: justify;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width:336px) {
+  .about-container {
+    padding: 8px;
+  }
+  
+  .about-hero {
+    margin-bottom: 10px;
+    height: 120px;
+  }
+  
+  .about-title {
+    font-size: 18px;
+  }
+  
+  .about-subtitle {
+    font-size: 7px;
+    margin: 10px;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-height: 450px;
+  }
+  
+  .about-process-img{
+    max-width: 200px;
+    border-radius: 20px ;
+  }
+  
+  .about-content-image{
+    width:100%;
+    height:150px;
+  }
+  
+  .about-content h1 {
+    font-size: 12px;
+  }
+  
+  .about-description {
+    font-size: 8px;
+  }
+  
+}
+
+@media screen and (min-width:336.5px)and (max-width:450px) {
+  .about-container {
+    padding: 8px;
+  }
+  
+  .about-hero {
+    margin-bottom: 10px;
+    height: 170px;
+  }
+  
+  .about-title {
+    font-size: 22px;
+  }
+  
+  .about-subtitle {
+    font-size: 14px;
+    margin: 10px;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-height: 450px;
+  }
+  
+  .about-process-img{
+    max-width: 300px;
+    border-radius: 20px ;
+  }
+  
+  .about-content-image{
+    width:100%;
+    height:150px;
+  }
+  
+  .about-content h1 {
+    font-size: 17px;
+  }
+  
+  .about-description {
+    font-size: 12px;
+  }
+  
+}
+
+@media screen and (min-width:450.5px)and (max-width:650px) {
+  .about-container {
+    padding: 8px;
+  }
+  
+  .about-hero {
+    margin-bottom: 10px;
+    height: 250px;
+  }
+  
+  .about-title {
+    font-size: 22px;
+  }
+  
+  .about-subtitle {
+    font-size: 14px;
+    margin: 10px;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-height: 250px;
+  }
+  
+  .about-process-img{
+    max-width: 400px;
+    
+  }
+  .about-content{
+    max-width: 300px;
+  }
+  .about-content-image{
+    width:100%;
+    height:150px;
+  }
+  
+  .about-content h1 {
+    font-size: 20px;
+  }
+  
+  .about-description {
+    font-size: 14px;
+  }
+  
+}
+
+
+@media screen and (min-width:650.5px)and (max-width:1150px) {
+  .about-container {
+    padding: 8px;
+  }
+  
+  .about-hero {
+    margin-bottom: 10px;
+    height: 300px;
+  }
+  
+  .about-title {
+    font-size: 30px;
+  }
+  
+  .about-subtitle {
+    font-size: 18px;
+    margin: 10px;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-height: 250px;
+  }
+  
+  .about-process-img{
+    max-width: 450px;
+    
+  }
+  .about-content{
+    max-width: 250px;
+  }
+  .about-content-image{
+    width:100%;
+    height:150px;
+  }
+  
+  .about-content h1 {
+    font-size: 20px;
+  }
+  
+  .about-description {
+    font-size: 12px;
+  }
+  
+}

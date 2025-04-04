@@ -1,0 +1,40 @@
+.second-blog-container{
+   display: flex;
+   gap: 20px;
+   padding: 10px 0px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   
+}
+.second-blog-container:hover{
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.second-blog-image{
+      width: 130px;
+}
+.second-blog-content{
+
+}
+.second-blog-title{
+    
+}
+.second-blog-details{
+   display: block;
+   margin-top: 8px; 
+}
+.second-blog-desc{
+      text-align: justify;
+      padding: 7px 0px;
+      padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+      .second-blog-title{
+            font-size: 14px;
+      }
+      .second-blog-details{
+            font-size: 10px;
+      }
+      .second-blog-desc{
+            font-size: 13px;
+      }
+}
