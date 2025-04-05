@@ -1,18 +1,18 @@
 import React from 'react'
-import Exoticscard from '../../components/Exoticscard/Exoticscard'
+import Healthcard from '../../components/Healthcard/Healthcard'
 import Navbar from "../../components/navbar/nav";
 import TopBar from '../../components/TopBar/TopBar';
 import Footer from '../../components/footer/footer';
 
-function Exotics() {
+function Health() {
   return (
     <>
     <Navbar/>
     <TopBar/>
-    <div><Exoticscard/></div>
+    <div><Healthcard/></div>
     <Footer/>
     </>
   )
 }
 
-export default Exotics
+export default Health

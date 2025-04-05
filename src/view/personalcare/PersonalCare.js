@@ -1,20 +1,23 @@
 import React from 'react'
-import Vegcard from '../../components/vegcard/vegcard'
-import './Vegetables.css'
+import './PersonalCare.css'
+import FruitCard from '../../components/Persnolcare/persnolcare'
 import Navbar from "../../components/navbar/nav";
 import TopBar from '../../components/TopBar/TopBar';
 import Footer from '../../components/footer/footer';
 
-function vegetables() {
+
+
+function PersonalCare() {
   return (
     <>
     <Navbar/>
     <TopBar/>
-    <Vegcard/>
-    <Footer/>
-    </>
+ 
+<FruitCard/>
+<Footer/>
+</>
 
   )
 }
 
-export default vegetables
+export default PersonalCare

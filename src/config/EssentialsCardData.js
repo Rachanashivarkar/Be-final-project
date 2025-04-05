@@ -1,15 +1,4 @@
-import chill from "../../src/images/card/chill.png"
-import ginger from "../../src/images/card/ginger.png"
-import potato from "../../src/images/card/potato.png"
-import onion from "../../src/images/card/onion.png"
-import cucumber from "../../src/images/card/cucumber.png"
-import garlic from "../../src/images/card/garlic.png"
-import lemon from "../../src/images/card/lemon.png"
-import rice from "../../src/images/card/rice.png"
-import pasta from "../../src/images/card/pasta.png"
-import salt from "../../src/images/card/salt.png"
-import vinegar from "../../src/images/card/vinegar.png"
-import spice from "../../src/images/card/spice.png"
+
 
 
 const EssentialsCardData = [

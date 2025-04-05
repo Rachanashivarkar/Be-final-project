@@ -5,6 +5,7 @@ import brandIcon from '../../images/login-img/logo2.png';
 import img3 from '../../images/login-img/image.png';
 import './login.css';
 import axios from 'axios';
+import API_BASE_URL from '../../apiConfig'; // ✅ Use base URL from config
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:3001/api/auth/login', {
+      const res = await axios.post(`${API_BASE_URL}/api/auth/login`, {
         email: formData.email,
         password: formData.password,
       });
@@ -40,6 +41,7 @@ const LoginForm = () => {
         }, 1500);
       }
     } catch (err) {
+      console.error("Login error:", err);
       toast.error(err.response?.data?.message || "Login failed!");
     }
   };

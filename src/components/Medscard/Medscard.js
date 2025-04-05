@@ -1,14 +1,14 @@
 import React from 'react';
-import ExoticsCardData from '../../config/ExoticsCardData';
+import CardData from '../../config/Medscard';
 import { Link } from 'react-router-dom';
-import '../Persnolcare/Frutecard.css';
+import '../Persnolcare/persnolcare.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
-function Exoticscard() {
+function MedsCard() {
   return (
     <>
-    <div className="App-fruit">
-      {ExoticsCardData.map((card) => {
+    <div className="App-person">
+      {CardData.map((card) => {
         return (
         
             <div className="card-body">
@@ -24,7 +24,7 @@ function Exoticscard() {
                 <del> {card.oldPrice}</del>
               </div>
           </Link>
-          <span className="buynow-btn"><QuantityButton  id={card.id} name={card.title} /></span>
+          <span className="buynow-btn"><QuantityButton id={card.id} name={card.title} /></span>
 
 
            </div>
@@ -39,5 +39,4 @@ function Exoticscard() {
   );
 }
 
-export default Exoticscard;
- 
+export default MedsCard;

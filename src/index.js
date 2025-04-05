@@ -16,10 +16,10 @@ import Checkout from './view/Checkout/Checkout';
 import Bill from './view/Bill/Bill';
 import Profile from './view/Profile/profile';
 import Essentials from './view/essentials/Essentials';
-import Dairy from './view/dairy/Dairy';
-import Fruits from './view/fruits/Fruits';
-import Exotics from './view/exotics/Exotics';
-import Vegetables from './view/vegetables/Vegetables';
+import Meds from './view/meds/Meds';
+import PersonalCare from './view/personalcare/PersonalCare';
+import Health from './view/health/Health';
+import BabyProducts from './view/babyproducts/babyproducts';
 
 import './index.css';
 
@@ -42,11 +42,11 @@ root.render(
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />
           <Route path="/essentials" element={<Essentials />} />
-          <Route path="/dairy" element={<Dairy />} />
+          <Route path="/meds" element={<Meds />} />
           <Route path="/card/:cardId" element={<Card />} />
-          <Route path="/exotics" element={<Exotics />} />
-          <Route path="/vegetables" element={<Vegetables />} />
-          <Route path="/fruits" element={<Fruits />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/babyproducts" element={<BabyProducts/>} />
+          <Route path="/personalcare" element={<PersonalCare />} />
         </Routes>
       </BrowserRouter>
     </GoogleOAuthProvider>

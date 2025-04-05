@@ -1,12 +1,12 @@
 import React from 'react'
-import './Dairy.css'
-import Dairycard from '../../components/Dairycard/Dairycard'
+import './Meds.css'
+import Dairycard from '../../components/Medscard/Medscard'
 import TopBar from '../../components/TopBar/TopBar'
 import Navbar from "../../components/navbar/nav";
 import Footer from '../../components/footer/footer';
 
 
-function Dairy() {
+function Meds() {
   return (
    <>
    <Navbar/>
@@ -18,4 +18,4 @@ function Dairy() {
   
 }
 
-export default Dairy
+export default Meds

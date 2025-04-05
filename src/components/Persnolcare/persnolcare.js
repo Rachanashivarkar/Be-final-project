@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cardData from '../../config/shopCardData';
 import { Link } from 'react-router-dom';
-import './Frutecard.css';
+import './persnolcare.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
 function FruitCard() { 
@@ -9,7 +9,7 @@ function FruitCard() {
   
 
   return (
-    <div className="App-fruit">
+    <div className="App-person">
       {cardData.map((card) => {
         return (
           <div className="card-body" key={card.id}>

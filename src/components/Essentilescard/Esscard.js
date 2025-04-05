@@ -1,7 +1,7 @@
 import React from 'react';
 import EssentialsCardData from '../../config/EssentialsCardData';
 import { Link } from 'react-router-dom';
-import '../Persnolcare/Frutecard.css';
+import '../Persnolcare/persnolcare.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
 
@@ -9,7 +9,7 @@ function Esscard() {
 
   return (
     <>
-    <div className="App-fruit">
+    <div className="App-person">
       {EssentialsCardData.map((card) => {
         return (
         

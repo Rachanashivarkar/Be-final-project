@@ -1,15 +1,7 @@
-import basil from "../../src/images/card/basil.png"
-import broccoli from "../../src/images/card/broccoli.png"
-import Leeks from "../../src/images/card/Leeks.png"
-import Tomato from "./../images/fruitcard/tomato.png";
-import iceberglettuce from "../../src/images/card/iceberglettuce.png"
-import mint from "../../src/images/card/mint.png"
-import zucchini from "../../src/images/card/zucchini.png"
-import parsley from "../../src/images/card/parsley.png"
-import capsicum from "../../src/images/card/capsicum.png"
 
 
-const ExoticsCardData = [
+
+const HealthCardData = [
 
     {
         id: "401",
@@ -125,4 +117,4 @@ const ExoticsCardData = [
       }
 
 ];
-export default ExoticsCardData
+export default HealthCardData

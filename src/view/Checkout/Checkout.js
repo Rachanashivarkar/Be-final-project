@@ -23,6 +23,7 @@ function Checkout() {
     state: '',
     zipCode: '',
     phoneNumber: '',
+    email: ''
   });
 
   const [expandedSection, setExpandedSection] = useState('deliveryDetails');
@@ -154,6 +155,15 @@ function Checkout() {
                   value={formData.phoneNumber}
                   onChange={handleChange}
                 />
+                <input
+  required
+  type="email"
+  name='email'
+  placeholder='Email address'
+  className='checkout-email'
+  value={formData.email}
+  onChange={handleChange}
+/>
                 <button type="submit" className='checkout-submit-button'  onClick={() => toggleSection('paymentOptions')}>Submit</button>
               </form>
             </div>

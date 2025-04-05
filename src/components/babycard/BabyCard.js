@@ -1,14 +1,15 @@
 import React from 'react';
-import DairyCardData from '../../config/DairyCardData';
+import BabyCardData from '../../config/BabyCardData';
 import { Link } from 'react-router-dom';
-import '../Persnolcare/Frutecard.css';
+import '../Persnolcare/persnolcare.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
-function DairyCard() {
+
+function Babycard() {
   return (
     <>
-    <div className="App-fruit">
-      {DairyCardData.map((card) => {
+    <div className="App-person">
+      {BabyCardData.map((card) => {
         return (
         
             <div className="card-body">
@@ -39,4 +40,4 @@ function DairyCard() {
   );
 }
 
-export default DairyCard;
+export default Babycard;

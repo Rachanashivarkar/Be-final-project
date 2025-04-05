@@ -6,10 +6,10 @@ import './service.css';
 import TopBar from './../../components/TopBar/TopBar';
 
 import Essentials from './../../view/essentials/Essentials';
-import Vegetables from './../../view/vegetables/Vegetables';
-import Fruits from './../../view/fruits/Fruits';
-import Exotics from './../../view/exotics/Exotics';
-import Dairy from './../../view/dairy/Dairy';
+import Vegetables from '../babyproducts/babyproducts';
+import Fruits from '../personalcare/PersonalCare';
+import Exotics from '../health/Health';
+import Dairy from '../meds/Meds';
 
 
 import Slider from '../../components/servicesSlider/Slider';
