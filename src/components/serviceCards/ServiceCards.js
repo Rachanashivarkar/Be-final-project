@@ -16,26 +16,26 @@ const cardsData = [
     },
 
     {
-        title: 'Vegetables',
-        imageUrl: vegetablesImage,
+        title: 'Baby Care',
+        imageUrl: 'https://th.bing.com/th/id/OIP.5wdQcNKhCkBhPu4-wtr8pwHaHa?rs=1&pid=ImgDetMain',
         path: '/vegetables', 
     },
 
     {
-        title: 'Exotics',
-        imageUrl: exoticsImage,
+        title: 'Health and nutrition',
+        imageUrl: 'https://i5.walmartimages.com/asr/500cd6b2-39c2-431d-b76b-8924f82d3135_1.01f905d94d3796ffe61135758224b6b6.jpeg',
         path: '/exotics', 
     },
 
     {
-        title: 'Fruits',
-        imageUrl: fruitImage,
+        title: 'Personal care',
+        imageUrl: 'https://th.bing.com/th/id/OIP.a4YJkAFE0kaztat1BTmL9QHaF8?rs=1&pid=ImgDetMain',
         path: '/fruits',
     },
 
     {
-        title: 'Dairy',
-        imageUrl: dairyImage,
+        title: 'Medicines',
+        imageUrl: 'https://th.bing.com/th/id/R.496b6159be56f6dd97dacd5167e7a531?rik=LMtsTor5Ny27sw&riu=http%3a%2f%2fimages-its.chemistdirect.co.uk%2fParacetamol-500mg-caplets-10456.jpg%3fo%3dwrwi2k9dA2Xo58Fh8cBcF%24swYG8j%26V%3dxCFy&ehk=0mMum8k8RtzYrsYL5gNaodlmEkw0MFoXtiry%2baMGIeI%3d&risl=&pid=ImgRaw&r=0',
         path: '/dairy', 
     },
 
