@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom'; // Add useNavigate here
-import brandIcon from '../../../images/login-img/logo2.png';
+import brandIcon from '../../../images/nav/logo2.png';
 import img3 from '../../../images/login-img/image.png';
 import axios from 'axios';
 import { GoogleLogin } from '@react-oauth/google';

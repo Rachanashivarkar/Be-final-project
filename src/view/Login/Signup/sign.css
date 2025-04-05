@@ -2,7 +2,7 @@
 	position: absolute;
 	padding: 10px;
 	background-color: #fff;
-	box-shadow: 4px 4px 10px rgba(38, 65, 52, 1);
+	box-shadow: 4px 4px 10px #153a23;
 	border-radius: 50%;
 	margin: 0 20px;
 	top: 20px;
@@ -24,7 +24,7 @@
 .header-container-1 {
 	width: 840px;
 	padding: 10px 30px;
-	background-color: rgba(38, 65, 52, 1);
+	background-color:#153a23;
 	display: flex;
 	justify-content: flex-end;
 	margin: 10px auto 0 auto;
@@ -49,19 +49,19 @@
 
 .nav-link-1:hover {
 	background-color: white;
-	color: rgba(38, 65, 52, 1);
+	color:#153a23;
 }
 
 .nav-link-1.active {
 	background-color: white;
-	color: rgba(38, 65, 52, 1);
+	color:#153a23;
 }
 
 
 .form-container-1 {
 	display: flex;
 	width: 900px;
-	box-shadow: 4px 4px 15px rgba(38, 65, 52, 1);
+	box-shadow: 4px 4px 15px #153a23;
 	overflow: hidden;
 	background-color: white;
 	margin: 0 auto 100px auto;
@@ -69,7 +69,7 @@
 }
 
 .welcome-section-1 {
-	background-color: rgba(38, 65, 52, 1);
+	background-color: #153a23;
 	color: white;
 	padding: 50px;
 	text-align: center;
@@ -145,13 +145,13 @@ input[type="password"] {
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover {
-	border-color: rgba(38, 65, 52, 1);
+	border-color: #153a23;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-	border-color: rgba(38, 65, 52, 1);
+	border-color:#153a23;
 	outline: none;
 }
 
@@ -172,7 +172,7 @@ input[type="password"]:focus {
 button.register-btn-1 {
 	width: 100%;
 	padding: 10px;
-	background-color: rgba(38, 65, 52, 1);
+	background-color: #153a23;
 	color: white;
 	border: none;
 	border-radius: 5px;
@@ -182,11 +182,11 @@ button.register-btn-1 {
 }
 
 .login-register-section-1 p a {
-	color: rgba(38, 65, 52, 1);
+	color: #153a23;
 }
 
 .login-register-section-1 p {
-	color: rgba(38, 65, 52, 1);
+	color:#153a23;
 	text-decoration: none;
 	text-align: center;
 	margin-top: 10px;
@@ -194,7 +194,7 @@ button.register-btn-1 {
 
 .login-register-section-1 p a:hover {
 	text-decoration: underline;
-	color: rgb(52, 113, 83);
+	color:#153a23;
 }
 
 /*media-queries*/
