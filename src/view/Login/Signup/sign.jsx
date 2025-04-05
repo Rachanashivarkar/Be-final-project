@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Add useNavigate here
 import brandIcon from '../../../images/login-img/logo2.png';
 import img3 from '../../../images/login-img/image.png';
 import axios from 'axios';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-
 import './sign.css';
 
 const SignupForm = () => {
@@ -18,6 +17,8 @@ const SignupForm = () => {
     password: '',
     confirmPassword: ''
   });
+
+  const navigate = useNavigate(); // Initialize navigate here
 
   const handleChange = (e) => {
     setFormData({
@@ -35,7 +36,7 @@ const SignupForm = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:8081/register', {
+      const res = await axios.post('http://localhost:3001/api/auth/register', {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
@@ -48,7 +49,7 @@ const SignupForm = () => {
       } else if (res.data.message === "User registered successfully") {
         toast.success('Account created successfully!');
         setTimeout(() => {
-          window.location.href = '/login';
+          navigate('/login'); // Navigate to login page after successful registration
         }, 2000);
       } else {
         toast.error('Registration failed!');
@@ -72,7 +73,7 @@ const SignupForm = () => {
   const handleGoogleSuccess = (credentialResponse) => {
     const decoded = jwtDecode(credentialResponse.credential);
 
-    axios.post("http://localhost:8081/google-auth", {
+    axios.post("http://localhost:3001/api/auth/google-auth", {
       email: decoded.email,
       name: decoded.name
     })

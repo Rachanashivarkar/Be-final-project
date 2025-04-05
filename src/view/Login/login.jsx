@@ -3,7 +3,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import brandIcon from '../../images/login-img/logo2.png';
 import img3 from '../../images/login-img/image.png';
-import './login.css'; 
+import './login.css';
 import axios from 'axios';
 
 const LoginForm = () => {
@@ -12,7 +12,7 @@ const LoginForm = () => {
     password: '',
   });
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -25,19 +25,18 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:8081/login', {
+      const res = await axios.post('http://localhost:3001/api/auth/login', {
         email: formData.email,
-        password: formData.password
+        password: formData.password,
       });
 
       if (res.data.message === "Login successful") {
         toast.success("Login successful!");
-        // Store user info if needed
         localStorage.setItem("isLogin", true);
         localStorage.setItem("user", JSON.stringify(res.data.user));
 
         setTimeout(() => {
-          navigate("/checkout"); // Change this route to your dashboard or home page
+          navigate("/checkout");
         }, 1500);
       }
     } catch (err) {
@@ -58,7 +57,8 @@ const LoginForm = () => {
         <div className="login-welcome-section">
           <img src={img3} alt="User" className="login-user-img" /><br />
           <h2>Welcome Back</h2>
-          <p className="login-welcome-text">Log in to access the best deals!<br />
+          <p className="login-welcome-text">
+            Log in to access the best deals!<br />
             <img src={brandIcon} alt="Brand Logo" className="login-brand-logo" />
           </p>
         </div>
