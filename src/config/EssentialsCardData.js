@@ -1,4 +1,15 @@
-
+import chill from "../../src/images/card/chill.png"
+import ginger from "../../src/images/card/ginger.png"
+import potato from "../../src/images/card/potato.png"
+import onion from "../../src/images/card/onion.png"
+import cucumber from "../../src/images/card/cucumber.png"
+import garlic from "../../src/images/card/garlic.png"
+import lemon from "../../src/images/card/lemon.png"
+import rice from "../../src/images/card/rice.png"
+import pasta from "../../src/images/card/pasta.png"
+import salt from "../../src/images/card/salt.png"
+import vinegar from "../../src/images/card/vinegar.png"
+import spice from "../../src/images/card/spice.png"
 
 
 const EssentialsCardData = [
@@ -154,8 +165,23 @@ const EssentialsCardData = [
         "preservativeFree": "Yes",
         "suitableFor": "Dry eyes, allergies, redness relief",
         "category": "Essentials"
+    },
+    {
+        "id": "112",
+        "title": "ORS",
+        "description": "WHO-recommended Oral Rehydration Salts (ORS) that help restore electrolyte balance and prevent dehydration due to diarrhea, vomiting, or heat exhaustion.",
+        "image": "https://5.imimg.com/data5/RG/QE/MY-6805272/oral-rehydration-salt-ors-500x500.jpg",
+        "price": "₹35",
+        "oldPrice": "₹50",
+        "quantity": "Pack of 5 sachets (21.8g each)",
+        "composition": "Sodium Chloride, Potassium Chloride, Glucose, Citrate",
+        "usageInstructions": "Dissolve one sachet in 1 liter of clean water and consume within 24 hours. Do not exceed recommended dosage.",
+        "warranty": "Not applicable",
+        "certifications": "WHO Approved, FSSAI Certified",
+        "flavor": "Lemon / Orange / Plain",
+        "suitableFor": "Dehydration due to diarrhea, vomiting, fever, or excessive sweating",
+        "category": "Essentials"
     }
-    
    
 ];
 export default EssentialsCardData

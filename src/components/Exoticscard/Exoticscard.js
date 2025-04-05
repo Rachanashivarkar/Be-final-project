@@ -1,7 +1,7 @@
 import React from 'react';
 import ExoticsCardData from '../../config/ExoticsCardData';
 import { Link } from 'react-router-dom';
-import './../Frutecard/Frutecard.css';
+import '../Persnolcare/Frutecard.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
 function Exoticscard() {

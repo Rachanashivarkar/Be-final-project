@@ -30,7 +30,7 @@ const Appcard1data = [
     text1: "Organic",
     text2: "Farming",
   }, {
-    image: cow,
+    image: earth,
     text1: "Diffrent",
     text2: "Livestock",
   },

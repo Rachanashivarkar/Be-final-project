@@ -1,7 +1,7 @@
 import React from 'react';
 import EssentialsCardData from '../../config/EssentialsCardData';
 import { Link } from 'react-router-dom';
-import './../Frutecard/Frutecard.css';
+import '../Persnolcare/Frutecard.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
 

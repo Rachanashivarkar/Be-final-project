@@ -20,27 +20,27 @@ const TopBar = () => {
         </Link>
 
         <Link className='menu-item'
-          to="/vegetables"
-          style={isActive('/vegetables') ? { color: ' rgba(38, 65, 52, 1)' } : { color: '#999999' }}>
-          VEGETABLES
+          to="/babyproducts"
+          style={isActive('/baby products') ? { color: ' rgba(38, 65, 52, 1)' } : { color: '#999999' }}>
+          Baby Products
         </Link>
 
         <Link className='menu-item'
           to="/Fruits"
           style={isActive('/Fruits') ? { color: ' rgba(38, 65, 52, 1)' } : { color: '#999999' }}>
-          FRUITS
+          Personal Care
         </Link>
 
         <Link className='menu-item'
           to="/exotics"
           style={isActive('/exotics') ? { color: ' rgba(38, 65, 52, 1)' } : { color: '#999999' }}>
-          EXOTICS
+          Health And Nutrition
         </Link>
 
         <Link className='menu-item'
           to="/dairy"
           style={isActive('/dairy') ? { color: ' rgba(38, 65, 52, 1)' } : { color: '#999999' }}>
-          DAIRY
+          Medicines
         </Link>
 
       </nav>

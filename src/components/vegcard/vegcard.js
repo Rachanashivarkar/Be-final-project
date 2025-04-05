@@ -1,7 +1,7 @@
 import React from 'react';
 import VegCardData from '../../config/VegCardData';
 import { Link } from 'react-router-dom';
-import './../Frutecard/Frutecard.css';
+import '../Persnolcare/Frutecard.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
 
