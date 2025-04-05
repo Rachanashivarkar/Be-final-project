@@ -13,10 +13,11 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
+  port:3307,
   database: "registercust"
 });
 
-// ✅ Registration Route with duplicate email check
+
 app.post('/register', (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
   const fullName = `${firstName} ${lastName}`;
