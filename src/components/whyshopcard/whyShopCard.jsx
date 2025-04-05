@@ -1,26 +1,26 @@
 import React from 'react';
 import './whyShopCard.css';
-import basket from "./../../images/fruitcard/basket.png"
-import farmer from "./../../images/fruitcard/farmer.png"
-import delivery from "./../../images/fruitcard/delivery.png"
+import securedata from "./img/secure-data.png"
+import tracking from "./img/tracking.png"
+import delivery from "./img/delivery.png"
 const cardData = [
   {
     id: 1,
     image:delivery,
     title: 'Superfast Delivery',
-    description: 'Experience lightning-fast delivery that brings your favorite products straight to your doorstep in record time!'
+    description: 'Experience lightning-fast delivery that brings your medicines products straight to your doorstep in record time!'
   },
   {
     id: 2,
-    image: basket,
-    title: 'Wide Assortment',
-    description: 'Discover a diverse range of products to meet all your needs and preferences!'
+    image: securedata,
+    title: 'Secure shopping',
+    description: 'Shop with confidence knowing your personal and payment details are safe.'
   },
   {
     id: 3,
-    image: farmer,
-    title: 'Fresh & Organic',
-    description: 'Enjoy farm-fresh, organic produce directly sourced from trusted farmers!'
+    image: tracking,
+    title: 'Track medicine',
+    description: 'Stay informed on your delivery status'
   }
 ];
 
@@ -28,7 +28,7 @@ function WhyShopCard() {
   return (
   <>
 
-    <h2 className='card-why-shop-heading'>Why shop from Agrimart?</h2>
+    <h2 className='card-why-shop-heading'>Why shop from Medifind?</h2>
         <div className='card-why-shop'>
       {cardData.map((card) => (
         <div key={card.id} className='card-why-shop-container'>
