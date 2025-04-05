@@ -4,22 +4,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import brandIcon from '../../images/login-img/logo2.png';
 import img3 from '../../images/login-img/image.png';
 import './login.css'; 
+import axios from 'axios';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
-  const [isLogin, setIsLogin] = useState(false);
+
   const navigate = useNavigate(); 
 
- 
-  const saveLoginStatus = (status) => {
-    setIsLogin(status);
-    localStorage.setItem('isLogin', status);
-  };
-
- 
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -27,30 +21,27 @@ const LoginForm = () => {
     });
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    try {
+      const res = await axios.post('http://localhost:8081/login', {
+        email: formData.email,
+        password: formData.password
+      });
 
+      if (res.data.message === "Login successful") {
+        toast.success("Login successful!");
+        // Store user info if needed
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("user", JSON.stringify(res.data.user));
 
-    const user = users.find(user => user.email === formData.email && user.password === formData.password);
-
-    if (user) {
-      
-      toast.success('Login successful!', 2000);
-      
-      
-      saveLoginStatus(true);
-
-      
-      localStorage.setItem('user', JSON.stringify({ firstName: user.firstName, lastName: user.lastName })); 
-
-    
-      navigate('/checkout');
-    } else {
-    
-      toast.error('Invalid email or password!', 2000);
+        setTimeout(() => {
+          navigate("/checkout"); // Change this route to your dashboard or home page
+        }, 1500);
+      }
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Login failed!");
     }
   };
 
@@ -93,7 +84,7 @@ const LoginForm = () => {
               />
               <button type="submit" className="login-btn">Login</button>
               <div className='login-register-section-2'>
-               <p>Don't have an account? <Link to="/sign">Register here</Link></p>
+                <p>Don't have an account? <Link to="/sign">Register here</Link></p>
               </div>
             </form>
           </div>

@@ -3,6 +3,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Link, Navigate } from 'react-router-dom';
 import brandIcon from '../../../images/login-img/logo2.png';
 import img3 from '../../../images/login-img/image.png';
+import axios from 'axios';
+
 import './sign.css';
 
 const SignupForm = () => {
@@ -25,33 +27,32 @@ const SignupForm = () => {
   };
 
   
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-
-    if (formData.password === formData.confirmPassword) {
-     
-      let users = JSON.parse(localStorage.getItem('users')) || [];
-
-     
-      const newUser = {
-        username: `${formData.firstName} ${formData.lastName}`, 
+  
+    if (formData.password !== formData.confirmPassword) {
+      toast.error('Passwords do not match!');
+      return;
+    }
+  
+    try {
+      const res = await axios.post('http://localhost:8081/register', {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
         phone: formData.phone,
         password: formData.password,
-      };
-
-     
-      users.push(newUser);
-
-      
-      localStorage.setItem('users', JSON.stringify(users));
-
-      toast.success('Account created successfully!',2000);
-   window.location.href = '/login';
-
- 
+      });
+  
+      if (res.data.message === "User registered successfully") {
+        toast.success('Account created successfully!');
+        setTimeout(() => {
+          window.location.href = '/login';
+        }, 2000);
+      } else {
+        toast.error('Registration failed!');
+      }
+  
       setFormData({
         firstName: '',
         lastName: '',
@@ -60,11 +61,13 @@ const SignupForm = () => {
         password: '',
         confirmPassword: ''
       });
-    } else {
-      toast.error('Passwords do not match!',2000);
+  
+    } catch (error) {
+      console.error("Registration error:", error);
+      toast.error('Something went wrong!');
     }
   };
-
+  
   return (
     <>
       <div className="signup-register-container">
