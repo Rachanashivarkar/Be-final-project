@@ -5,12 +5,12 @@ import image from "./feedbackimages/rating.png";
 import logo from "./feedbackimages/logo.png";
 
 const RatingForm = () => {
-  const [rating, setRating] = useState(null); // To store the selected rating
-  const [feedback, setFeedback] = useState(''); // To store the feedback text
-  const [name, setName] = useState(''); // To store user name
-  const [email, setEmail] = useState(''); // To store user email
+  const [rating, setRating] = useState(null); 
+  const [feedback, setFeedback] = useState(''); 
+  const [name, setName] = useState(''); 
+  const [email, setEmail] = useState('');
 
-  // Load data from local storage on component mount
+ 
   useEffect(() => {
     const storedRating = localStorage.getItem('rating');
     const storedFeedback = localStorage.getItem('feedback');
