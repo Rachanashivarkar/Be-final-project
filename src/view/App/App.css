@@ -130,7 +130,7 @@
 
 .shop-now-button,
 .upload-button {
-  background-color: #28a745;
+  background-color: #135122;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -154,7 +154,7 @@
 
 /* Upload Prescription */
 .upload-button {
-  background-color: #218838;
+  background-color:  #153a23;
   text-align: center;
   position: relative;
   display: inline-block;
@@ -173,6 +173,34 @@
   font-size: 14px;
   color: #333;
 }
+
+.prescription-gallery {
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.prescription-card {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 160px;
+}
+
+.prescription-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
 
 /* RESPONSIVENESS */
 
