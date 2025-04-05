@@ -20,7 +20,7 @@ const TopBar = () => {
         </Link>
 
         <Link className='menu-item'
-          to="/babyproducts"
+          to="/vegetables"
           style={isActive('/baby products') ? { color: ' rgba(38, 65, 52, 1)' } : { color: '#999999' }}>
           Baby Products
         </Link>

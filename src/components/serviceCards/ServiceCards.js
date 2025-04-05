@@ -2,11 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ServiceCards.css';
 
-import essentialsImage from './../../images/serviceCard/essentialsImage.webp';
-import vegetablesImage from './../../images/serviceCard/vegetablesImage.jpg';
-import exoticsImage from './../../images/serviceCard/exoticsImage.webp';
-import fruitImage from './../../images/serviceCard/fruitImage.webp';
-import dairyImage from './../../images/serviceCard/dairyImage.jpg';
+
 
 const cardsData = [
     {
