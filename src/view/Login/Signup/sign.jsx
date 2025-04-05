@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import brandIcon from '../../../images/login-img/logo2.png';
 import img3 from '../../../images/login-img/image.png';
 import axios from 'axios';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 
 import './sign.css';
 
@@ -17,24 +19,21 @@ const SignupForm = () => {
     confirmPassword: ''
   });
 
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-      
     });
   };
 
-  
   const handleRegister = async (e) => {
     e.preventDefault();
-  
+
     if (formData.password !== formData.confirmPassword) {
       toast.error('Passwords do not match!');
       return;
     }
-  
+
     try {
       const res = await axios.post('http://localhost:8081/register', {
         firstName: formData.firstName,
@@ -43,8 +42,10 @@ const SignupForm = () => {
         phone: formData.phone,
         password: formData.password,
       });
-  
-      if (res.data.message === "User registered successfully") {
+
+      if (res.data.message === "User already exists") {
+        toast.error('User already exists!');
+      } else if (res.data.message === "User registered successfully") {
         toast.success('Account created successfully!');
         setTimeout(() => {
           window.location.href = '/login';
@@ -52,7 +53,7 @@ const SignupForm = () => {
       } else {
         toast.error('Registration failed!');
       }
-  
+
       setFormData({
         firstName: '',
         lastName: '',
@@ -61,13 +62,34 @@ const SignupForm = () => {
         password: '',
         confirmPassword: ''
       });
-  
+
     } catch (error) {
       console.error("Registration error:", error);
       toast.error('Something went wrong!');
     }
   };
-  
+
+  const handleGoogleSuccess = (credentialResponse) => {
+    const decoded = jwtDecode(credentialResponse.credential);
+
+    axios.post("http://localhost:8081/google-auth", {
+      email: decoded.email,
+      name: decoded.name
+    })
+    .then(res => {
+      toast.success(res.data.message);
+      window.location.href = '/checkout';
+    })
+    .catch(err => {
+      console.error("Google login error:", err);
+      toast.error("Something went wrong!");
+    });
+  };
+
+  const handleGoogleError = () => {
+    toast.error("Google login failed");
+  };
+
   return (
     <>
       <div className="signup-register-container">
@@ -140,16 +162,24 @@ const SignupForm = () => {
                 />
                 <button type="submit" className="register-btn-1">Register</button>
                 <div className='login-register-section-1'>
-                  <p>Do not have an account? <Link to="/login">Login here</Link></p>
+                  <p>Already have an account? <Link to="/login">Login here</Link></p>
                 </div>
               </form>
+
+              <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+                <p>Or continue with</p>
+                <GoogleLogin
+                  onSuccess={handleGoogleSuccess}
+                  onError={handleGoogleError}
+                />
+              </div>
+
             </div>
           </div>
         </div>
       </div>
 
       <Toaster />
-   
     </>
   );
 };
