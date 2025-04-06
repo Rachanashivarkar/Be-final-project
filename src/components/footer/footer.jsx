@@ -44,16 +44,15 @@ const Footer = () => {
   const footerRoutes = [
     { path: '/about', name: 'About us' },
     { path: '/services', name: 'Services' },
-    { path: '/blog', name: 'Blog' },
     { path: '/feedback', name: 'Feedback' }
   ];
 
   const services = [
     { name: 'Essentials', href: '/essentials' },
-    { name: 'BabyProducts', href: '/babyproducts' },
-    { name: 'Fruits', href: '/fruits' },
-    { name: 'Exotics', href: '/exotics' },
-    { name: 'Dairy', href: '/dairy' }
+    { name: 'Baby Products', href: '/babyproducts' },
+    { name: 'health & nutrition', href: '/health' },
+    { name: 'Personal care', href: '/personalcare' },
+    { name: 'Medicines', href: '/meds' }
   ];
 
   return (

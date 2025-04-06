@@ -13,12 +13,9 @@ const headerdata = [
     to: "/about",
     name: "About"
   },
+  
   {
-    to: "/blog",
-    name: "Blog"
-  },
-  {
-    name: "Register", // dropdown
+    name: "Register",
     dropdown: [
       { name: "As Customer", to: "./sign" },
       { name: "As Medical Store", to: "/MedicalRegister" },
