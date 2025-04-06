@@ -1,4 +1,4 @@
-// src/config/headerdata.js (or wherever this file lives)
+// src/config/headerdata.js
 
 import Login from './../view/Login/login.jsx';
 
@@ -20,7 +20,7 @@ const headerdata = [
     name: "Login"
   },
   {
-    name: "Register", // dropdown
+    name: "Register",
     dropdown: [
       { name: "As Customer", to: "./sign" },
       { name: "As Medical Store", to: "/MedicalRegister" },
