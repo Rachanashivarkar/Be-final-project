@@ -2,7 +2,7 @@
 
 
 
-const VegCardData = [
+const BabayCardData = [
 
     {
         "id": "201",
@@ -139,4 +139,4 @@ const VegCardData = [
 
 
 ];
-export default VegCardData;
+export default BabayCardData;

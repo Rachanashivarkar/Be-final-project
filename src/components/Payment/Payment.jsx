@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import toast ,{ Toaster} from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 const PaymentButton = ({ price, name1, contact1, email1 }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-const localemail = JSON.parse(localStorage.getItem('users'))[0].email;
+
+  const userData = JSON.parse(localStorage.getItem('users'));
+  const localemail = userData?.[0]?.email || '';
+
   const loadRazorpayScript = () => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -15,8 +18,13 @@ const localemail = JSON.parse(localStorage.getItem('users'))[0].email;
       document.body.appendChild(script);
     });
   };
-  
+
   const handlePayment = async () => {
+    if (!localemail) {
+      toast.error('User not logged in. Please login before proceeding.');
+      return;
+    }
+
     setLoading(true);
     const res = await loadRazorpayScript();
 
@@ -27,9 +35,9 @@ const localemail = JSON.parse(localStorage.getItem('users'))[0].email;
     }
 
     const checkoutData = JSON.parse(localStorage.getItem('checkoutFormData'));
-    
+
     if (!checkoutData) {
-   toast.error('No checkout data found. Please try again.');
+      toast.error('No checkout data found. Please try again.');
       setLoading(false);
       return;
     }
@@ -42,8 +50,7 @@ const localemail = JSON.parse(localStorage.getItem('users'))[0].email;
       description: "Test Transaction",
       image: "https://assignment-42-emou.vercel.app/static/media/logo.313036b5e7346daaeaf3.png",
       handler: function (response) {
-       toast.success('Payment Successful!');
-  
+        toast.success('Payment Successful!');
         navigate('/bill');
       },
       prefill: {
@@ -69,11 +76,18 @@ const localemail = JSON.parse(localStorage.getItem('users'))[0].email;
       <button
         onClick={handlePayment}
         disabled={loading}
-        style={{ padding: '10px 20px', fontSize: '16px', backgroundColor: '#3f5944f3', color: 'white', border: 'none', borderRadius: '5px' }}
+        style={{
+          padding: '10px 20px',
+          fontSize: '16px',
+          backgroundColor: '#3f5944f3',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+        }}
       >
         {loading ? 'Loading...' : `Pay ₹${price} Now`}
       </button>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

@@ -50,7 +50,7 @@ const Footer = () => {
 
   const services = [
     { name: 'Essentials', href: '/essentials' },
-    { name: 'Vegetables', href: '/vegetables' },
+    { name: 'BabyProducts', href: '/babyproducts' },
     { name: 'Fruits', href: '/fruits' },
     { name: 'Exotics', href: '/exotics' },
     { name: 'Dairy', href: '/dairy' }

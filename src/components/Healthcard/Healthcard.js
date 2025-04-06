@@ -1,15 +1,14 @@
 import React from 'react';
-import VegCardData from '../../config/VegCardData';
+import HealthCardData from '../../config/HealthCardData';
 import { Link } from 'react-router-dom';
-import '../Persnolcare/Frutecard.css';
+import '../Persnolcare/persnolcare.css';
 import QuantityButton from '../BuynowButton/Buynow';
 
-
-function Vegcard() {
+function Healthcard() {
   return (
     <>
-    <div className="App-fruit">
-      {VegCardData.map((card) => {
+    <div className="App-person">
+      {HealthCardData.map((card) => {
         return (
         
             <div className="card-body">
@@ -25,7 +24,7 @@ function Vegcard() {
                 <del> {card.oldPrice}</del>
               </div>
           </Link>
-          <span className="buynow-btn"><QuantityButton id={card.id} name={card.title} /></span>
+          <span className="buynow-btn"><QuantityButton  id={card.id} name={card.title} /></span>
 
 
            </div>
@@ -40,4 +39,5 @@ function Vegcard() {
   );
 }
 
-export default Vegcard;
+export default Healthcard;
+ 

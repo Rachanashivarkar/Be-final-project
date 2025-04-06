@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import cardData from '../../../config/shopCardData';
-import VegCardData from '../../../config/VegCardData';
-import DairyCardData from '../../../config/DairyCardData';
-import ExoticsCardData from '../../../config/ExoticsCardData';
+import BabayCardData from '../../../config/BabyCardData';
+import DairyCardData from '../../../config/Medscard';
+import ExoticsCardData from '../../../config/HealthCardData';
 import EssentialsCardData from '../../../config/EssentialsCardData';
 import './Card.css';
 import WhyShopCard from "../../../components/whyshopcard/whyShopCard";
@@ -15,7 +15,7 @@ import QuantityButton from "./../../../components/BuynowButton/Buynow";
 function Card() {
   const cardsId = [...cardData,
   ...DairyCardData,
-  ...VegCardData,
+  ...BabayCardData,
   ...ExoticsCardData,
   ...EssentialsCardData];
   let { cardId } = useParams();

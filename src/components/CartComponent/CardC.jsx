@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './CardC.css';
 import cardData from './../../config/shopCardData';
-import DairyCardData from './../../config/DairyCardData';
-import VegCardData from './../../config/VegCardData';
-import ExoticsCardData from './../../config/ExoticsCardData';
+import DairyCardData from '../../config/Medscard';
+import BabyCardData from '../../config/BabyCardData';
+import ExoticsCardData from '../../config/HealthCardData';
 import QuantityButton from '../BuynowButton/Buynow';
 import EssentialsCardData from '../../config/EssentialsCardData';
 import { Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ function CardC({ CardOpen }) {
     const allCardData = [
       ...cardData,
       ...DairyCardData,
-      ...VegCardData,
+      ...BabyCardData,
       ...ExoticsCardData,
       ...EssentialsCardData
     ];

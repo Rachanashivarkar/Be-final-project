@@ -1,17 +1,4 @@
-import Milk from "./../images/dairycard/milk.png";
-import paneer from "../../src/images/card/paneer.png"
-import butter from "../../src/images/card/butter.png"
-import shikhnda from "../../src/images/card/shrikhad.png"
-import cream from "../../src/images/card/cream.png"
-import ghee from "../../src/images/card/ghee.png"
-import cheese from "../../src/images/card/cheese.png"
-import ricotta from "../../src/images/card/ricotta.png"
-import kefir from "../../src/images/card/kefir.png"
-import whey from "../../src/images/card/whey.png"
-import mascarpone from "../../src/images/card/mascarpone.png"
-import buttermilk from "../../src/images/card/Buttermilk.png"
-import milk_powder from "../../src/images/card/milk_powder.png"
-import sour_cream from "../../src/images/card/sour_cream.png"
+
 
 const cardData = [
 
