@@ -1,4 +1,6 @@
+// src/config/headerdata.js
 
+import Login from './../view/Login/login.jsx';
 
 const headerdata = [
   {
@@ -13,7 +15,10 @@ const headerdata = [
     to: "/about",
     name: "About"
   },
-  
+  {
+    to: "/login",
+    name: "Login"
+  },
   {
     name: "Register",
     dropdown: [
@@ -28,7 +33,4 @@ const headerdata = [
   }
 ];
 
-
-
-
-export { headerdata}
+export { headerdata };
