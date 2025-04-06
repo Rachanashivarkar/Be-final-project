@@ -20,6 +20,8 @@ import Meds from './view/meds/Meds';
 import PersonalCare from './view/personalcare/PersonalCare';
 import Health from './view/health/Health';
 import BabyProducts from './view/babyproducts/babyproducts';
+import MedicalRegister from './view/Register/MedicalRegister';
+
 
 import './index.css';
 
@@ -47,6 +49,7 @@ root.render(
           <Route path="/health" element={<Health />} />
           <Route path="/babyproducts" element={<BabyProducts/>} />
           <Route path="/personalcare" element={<PersonalCare />} />
+          <Route path="/MedicalRegister" element={<MedicalRegister />} />
         </Routes>
       </BrowserRouter>
     </GoogleOAuthProvider>

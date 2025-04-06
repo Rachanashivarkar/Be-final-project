@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 import { Link, useNavigate } from 'react-router-dom';
-import brandIcon from '../../../images/login-img/logo2.png';
+import brandIcon from '../../../images/nav/logo2.png';
 import img3 from '../../../images/login-img/image.png';
 
 import axios from 'axios';
@@ -109,7 +109,7 @@ const SignupForm = () => {
           <div className="welcome-section-1">
             <img src={img3} alt="User" className="user-img" /><br />
             <h2>Welcome</h2>
-            <p>Harvest the Best Deals – Register and Start Shopping with <img src={brandIcon} alt="brand logo" className="brand-logo" /></p>
+            <p> Register and Start Shopping with <img src={brandIcon} alt="brand logo" className="brand-logo" /></p>
           </div>
           <div className="registration-section-1">
             <div className="form-box-1">

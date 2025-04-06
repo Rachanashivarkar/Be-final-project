@@ -2,14 +2,12 @@ import './nav.css';
 import { NavLink, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { headerdata } from './../../config/config';
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import brandIcon from "./../../../src/images/nav/logo2.png";
 
 function Header() {
   const location = useLocation();
   const [menuActive, setMenuActive] = useState(false);
-
- 
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -25,19 +23,39 @@ function Header() {
             </NavLink>
           </div>
 
-          <ul className={`nav-menu ${menuActive ? 'active' : ''}`} >
-
+          <ul className={`nav-menu ${menuActive ? 'active' : ''}`}>
             {headerdata.map((item, index) => (
               <li className="nav-item" key={index}>
-                <NavLink
-                  to={item.to}
-                  style={({ isActive }) =>
-                    isActive ? { color: 'white' } : { color: '#999999' }
-                  }
-                  className="nav"
-                >
-                  {item.name}
-                </NavLink>
+                {item.dropdown ? (
+                  <div className="dropdown">
+                    <span className="nav dropdown-toggle">{item.name}</span>
+                    <ul className="dropdown-menu">
+                      {item.dropdown.map((subItem, subIndex) => (
+                        <li key={subIndex}>
+                          <NavLink
+                            to={subItem.to}
+                            className="dropdown-link"
+                            style={({ isActive }) =>
+                              isActive ? { color: 'white' } : { color: '#333' }
+                            }
+                          >
+                            {subItem.name}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <NavLink
+                    to={item.to}
+                    style={({ isActive }) =>
+                      isActive ? { color: 'white' } : { color: '#999999' }
+                    }
+                    className="nav"
+                  >
+                    {item.name}
+                  </NavLink>
+                )}
               </li>
             ))}
           </ul>
