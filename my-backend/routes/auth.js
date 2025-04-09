@@ -5,14 +5,14 @@ const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library');
 const uploadMiddleware = require('../middlewares/upload');
 
-// Models
+
 const User = require('../models/User');
 const MedicalStore = require('../models/MedicalStore');
 
-// Google OAuth Client
-const client = new OAuth2Client('YOUR_GOOGLE_CLIENT_ID');
 
-// ========= CUSTOMER REGISTRATION =========
+//const client = new OAuth2Client('YOUR_GOOGLE_CLIENT_ID');
+
+
 router.post('/register', async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
 
@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// ========= CUSTOMER LOGIN =========
+
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// ========= GOOGLE LOGIN =========
+
 router.post('/google-login', async (req, res) => {
   const { token } = req.body;
 
@@ -80,7 +80,7 @@ router.post('/google-login', async (req, res) => {
   }
 });
 
-// ========= MEDICAL STORE REGISTRATION =========
+
 router.post(
   '/medical-register',
   uploadMiddleware.fields([
@@ -133,7 +133,7 @@ router.post(
   }
 );
 
-// ========= MEDICAL STORE LOGIN =========
+
 router.post('/medical-login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -156,6 +156,44 @@ router.post('/medical-login', async (req, res) => {
     res.status(500).json({ message: "Something went wrong" });
   }
 });
+const Checkout = require('../models/Checkout');
+const authenticateToken = require('../middlewares/authMiddleware'); // We'll create this
+
+router.post('/checkout', authenticateToken, async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const { formData, cartItems, totalPrice } = req.body;
+
+    const newCheckout = new Checkout({
+      userId,
+      ...formData,
+      cartItems,
+      totalPrice
+    });
+
+    await newCheckout.save();
+
+    res.status(200).json({ message: "Checkout info saved successfully." });
+  } catch (err) {
+    console.error("Checkout Save Error:", err);
+    res.status(500).json({ message: "Failed to save checkout info" });
+  }
+});
+const Order = require('../models/Order');
+
+router.post('/checkout', async (req, res) => {
+  try {
+    const { formData, cartItems, totalPrice, userId } = req.body;
+    const newOrder = new Order({ userId, formData, cartItems, totalPrice });
+    await newOrder.save();
+    res.status(200).json({ message: "Order saved successfully" });
+  } catch (err) {
+    console.error("Checkout Error:", err);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+});
+
+
 
 // ✅ Test route
 router.get('/test', (req, res) => {

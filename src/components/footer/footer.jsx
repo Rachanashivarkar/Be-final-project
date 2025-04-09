@@ -44,7 +44,7 @@ const Footer = () => {
   const footerRoutes = [
     { path: '/about', name: 'About us' },
     { path: '/services', name: 'Services' },
-    { path: '/feedback', name: 'Feedback' }
+   
   ];
 
   const services = [

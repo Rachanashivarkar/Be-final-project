@@ -1,4 +1,3 @@
-// src/config/headerdata.js
 
 import Login from './../view/Login/login.jsx';
 

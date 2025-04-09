@@ -6,12 +6,13 @@ import { useNavigate } from 'react-router-dom';
 
 function Checkout() {
   const navigate = useNavigate(); 
+
+  // ✅ Ensure this is properly treated as a boolean
+  const islogin = localStorage.getItem('isLogin') === "true";
+
   const totalPrice = localStorage.getItem('totalPrice');
-  const islogin = localStorage.getItem('isLogin');
   const [showPayment, setShowPayment] = useState(false);
   const billdata = JSON.parse(localStorage.getItem('cartItems')) || {};
-
-
 
   const [formData, setFormData] = useState({
     country: '',
@@ -30,9 +31,10 @@ function Checkout() {
 
   useEffect(() => {
     if (!islogin) {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         navigate('/login');
       }, 2000);
+      return () => clearTimeout(timeout); // cleanup
     }
   }, [islogin, navigate]); 
 
@@ -156,15 +158,17 @@ function Checkout() {
                   onChange={handleChange}
                 />
                 <input
-  required
-  type="email"
-  name='email'
-  placeholder='Email address'
-  className='checkout-email'
-  value={formData.email}
-  onChange={handleChange}
-/>
-                <button type="submit" className='checkout-submit-button'  onClick={() => toggleSection('paymentOptions')}>Submit</button>
+                  required
+                  type="email"
+                  name='email'
+                  placeholder='Email address'
+                  className='checkout-email'
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                <button type="submit" className='checkout-submit-button' onClick={() => toggleSection('paymentOptions')}>
+                  Submit
+                </button>
               </form>
             </div>
           </div>
@@ -226,6 +230,7 @@ function Checkout() {
             </div>
           </div>
         </div>
+
         <div className='checkout-div2'>
           <h2>PRICE DETAILS</h2>
           <hr />
@@ -235,11 +240,10 @@ function Checkout() {
           <hr />
           <h2>Total Payable: <span>₹{totalPrice}</span></h2>
         </div>
-      </div></>
+      </div>
+      </>
     ) : (
-      <h1 className='checkout-redirect'>
-        Redirecting to Login...
-      </h1>
+      <h1 className='checkout-redirect'>Redirecting to Login...</h1>
     )
   );
 }
