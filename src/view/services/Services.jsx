@@ -14,6 +14,7 @@ import Dairy from '../meds/Meds';
 
 import Slider from '../../components/servicesSlider/Slider';
 import ServiceCards from './../../components/serviceCards/ServiceCards';
+import MedicalShops from '../../components/medicalShops/MedicalShops';
 
 const Services = () => {
   
@@ -45,6 +46,7 @@ const Services = () => {
           <>
             <Slider />
             <ServiceCards />
+            <MedicalShops />
           </>
         );
     }
