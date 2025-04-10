@@ -24,6 +24,7 @@ import MedicalRegister from './view/Register/MedicalRegister';
 
 
 import './index.css';
+import ShopMedicines from './view/ShopMedicines/ShopMedicines';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -50,6 +51,7 @@ root.render(
           <Route path="/babyproducts" element={<BabyProducts/>} />
           <Route path="/personalcare" element={<PersonalCare />} />
           <Route path="/MedicalRegister" element={<MedicalRegister />} />
+          <Route path="/shop/:shop_id" element={<ShopMedicines />} />
         </Routes>
       </BrowserRouter>
     </GoogleOAuthProvider>
